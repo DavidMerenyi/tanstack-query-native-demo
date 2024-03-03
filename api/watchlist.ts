@@ -1,4 +1,4 @@
-export const addMovieToWatchlist = async (id) => {
+export const addMovieToWatchlist = async (id: number) => {
     const url = 'https://api.themoviedb.org/3/account/8965196/watchlist';
     const options = {
         method: 'POST',
