@@ -6,7 +6,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 
 import { useColorScheme } from '@/components/useColorScheme';
-
+import { useReactQueryDevTools } from '@dev-plugins/react-query';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const client = new QueryClient();
@@ -29,6 +29,7 @@ export default function RootLayout() {
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     ...FontAwesome.font,
   });
+  useReactQueryDevTools(client);
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
