@@ -11,10 +11,10 @@ const MovieDetails = () => {
 
     const client = useQueryClient()
 
-    const { data: movie, isLoading, error } = useQuery({ queryKey: ['movies', id], queryFn: () => fetchMovie(id) })
+    const { data: movie, isLoading, error } = useQuery({ queryKey: ['movies', id], queryFn: () => fetchMovie(Number(id)) })
 
     const { mutate } = useMutation({
-        mutationFn: () => addMovieToWatchlist(id),
+        mutationFn: () => addMovieToWatchlist(Number(id)),
         onSuccess: () => {
             client.invalidateQueries({ queryKey: ['watchlist'] })
         }

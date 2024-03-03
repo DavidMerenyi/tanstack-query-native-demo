@@ -3,7 +3,7 @@ const headers = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmZDI3ZjI3YjU0NGQ2NjNmOWRjNGYyZDJkOGUzZTI0OSIsInN1YiI6IjVlMTZmMWZjMGNiMzM1MDAxNzA0ZmRlYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Si48xZDQTg_iA-aPLy7OGBqkyinkaD5Dfx0wiXCTWhA'
 }
 
-export const fetchTopRatedMovies = async ({ pageParam }) => {
+export const fetchTopRatedMovies = async ({ pageParam }: { pageParam: number }) => {
     const url = `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&page=${pageParam}`;
     const options = {
         method: 'GET',
