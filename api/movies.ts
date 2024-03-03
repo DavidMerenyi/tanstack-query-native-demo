@@ -44,3 +44,4 @@ export const fetchMovie = async (id) => {
         console.error('error:' + err)
     }
 }
+
