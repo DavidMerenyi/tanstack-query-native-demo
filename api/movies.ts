@@ -13,7 +13,7 @@ export const fetchTopRatedMovies = async ({ pageParam }: { pageParam: number }) 
     try {
         const res = await fetch(url, options)
 
-        if (res.ok) {
+        if (!res.ok) {
             throw new Error('Failed to fetch movies')
         }
 
@@ -34,7 +34,7 @@ export const fetchMovie = async (id: number) => {
     try {
         const res = await fetch(url, options)
 
-        if (res.ok) {
+        if (!res.ok) {
             throw new Error('Failed to fetch movie')
         }
 

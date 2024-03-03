@@ -13,7 +13,7 @@ export const addMovieToWatchlist = async (id: number) => {
     try {
         const res = await fetch(url, options)
 
-        if (res.ok) {
+        if (!res.ok) {
             throw new Error('Failed to save movie')
         }
 
@@ -37,8 +37,8 @@ export const fetchWatchListMovies = async () => {
     try {
         const res = await fetch(url, options)
 
-        if (res.ok) {
-            throw new Error('Failed to fetch movie')
+        if (!res.ok) {
+            throw new Error('Failed to fetch watchlist movies')
         }
 
         const json = await res.json()

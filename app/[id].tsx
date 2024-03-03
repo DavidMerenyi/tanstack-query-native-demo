@@ -31,7 +31,7 @@ const MovieDetails = () => {
     return (
         <View>
             <Stack.Screen options={{ title: movie.title }} />
-            <Image source={{ uri: `https://image.tmb.org/t/p/w500/${movie.backdrop_path}` }} style={{ width: '100%', height: 300 }} />
+            <Image source={{ uri: `https://image.tmdb.org/t/p/w500${movie.backdrop_path}` }} style={{ width: '100%', height: 300 }} />
             <View style={{ padding: 10 }}>
                 <Text style={{ fontSize: 24, fontWeight: '500', marginVertical: 10 }}>{movie.title}</Text>
                 <View style={{ marginVertical: 10 }}>
